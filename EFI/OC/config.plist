@@ -483,24 +483,7 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
-                <dict>
-                    <key>Arch</key>
-                    <string>Any</string>
-                    <key>BundlePath</key>
-                    <string>NootedRed.kext</string>
-                    <key>Comment</key>
-                    <string>V1.0.0</string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>ExecutablePath</key>
-                    <string>Contents/MacOS/NootedRed</string>
-                    <key>MaxKernel</key>
-                    <string></string>
-                    <key>MinKernel</key>
-                    <string></string>
-                    <key>PlistPath</key>
-                    <string>Contents/Info.plist</string>
-                </dict>
+                <!-- Add your NootedRed entry here -->
                 <dict>
                     <key>Arch</key>
                     <string>Any</string>
@@ -1844,7 +1827,7 @@
                 <key>PasswordSalt</key>
                 <data></data>
                 <key>ScanPolicy</key>
-                <integer>3080963</integer>
+                <integer>0</integer>
                 <key>SecureBootModel</key>
                 <string>j137</string>
                 <key>Vault</key>
@@ -1912,7 +1895,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>keepsyms=1 debug=0x100 -vi2c-force-polling -wegnoegpu</string>
+                    <string>keepsyms=1 debug=0x100 -vi2c-force-polling -wegnoegpu -v</string>
                     <key>csr-active-config</key>
                     <data>AAAAAA==</data>
                     <key>prev-lang:kbd</key>
