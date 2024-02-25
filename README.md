@@ -31,8 +31,6 @@ Wi-Fi             | Intel AX200 Wi-Fi 6 (802.11ax) | ✅
 Ethernet          | Realtek RTL8111 | ✅
 Audio       | Realtek ALC 257 | ✅
 
-# Prerequisites
-
 # BIOS Setup  
 
 ## Unlocking the advanced BIOS menu
