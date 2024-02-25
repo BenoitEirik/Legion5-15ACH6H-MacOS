@@ -31,7 +31,16 @@ Wi-Fi             | Intel AX200 Wi-Fi 6 (802.11ax) | ✅
 Ethernet          | Realtek RTL8111 | ✅
 Audio       | Realtek ALC 257 | ✅
 
+# Prerequisites
+
+* Disable 
+
 # BIOS Setup  
+
+## Disabling Secure Boot
+
+## Prepare a partition
+* Step 1. Format 
 
 ## Unlocking the advanced BIOS menu
 * Step 1. Format a USB as FAT32
@@ -56,15 +65,36 @@ With the patched BIOS loaded follow these steps to disable XHCI1:
 * Step 3. Find iGPU VRAM size (Default is 512MB)
 * Step 4. Set to 1GB or above (recommended by NootedRed)
 
-## Making the OpenCore USB
-* Step 1. Download all of the files from this repo
-* Step 2. Format a USB drive as FAT32
-* Step 3. Drag & Drop just the "EFI" folder from this repo into the root of the USB drive
-* Step 4. Boot from the USB
-* Step 5. Profit??
+## Making the EFI partition with OpenCore
+* Step 1. Format a partition as FAT32 with a name like `EFI_MACOS` (you can use a USB drive but it will be needed to start MacOS each time you boot)
+* Step 2. Download the "EFI" folder from this repo and place it in the root of your EFI partition
+* Step 3. Add the MacOS installer in `the com.apple.recovery.boot` folder following the instructions from [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/#making-the-installer).
+* Step 4. Before booting, be sure to have a formatted partition (as FAT32 next to the EFI partition for example) to install MacOS on it (the MacOS installer doesn't found the free space on my drive). You will format this partition after in APFS from the MacOS installer.
+* Step 4. Boot from your EFI partition, format your partition where you want MacOS installed, and proceed on installation.
 
-## Making a macOS Installer
-Follow the instructions from [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/#making-the-installer).
+## Postinstallation
+* Step 1. Edit your `EFi\OC\config.plist` file and add this entry at the comment `<!-- Add your NootedRed entry here -->`
+```
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>NootedRed.kext</string>
+                    <key>Comment</key>
+                    <string>V1.0.0</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/NootedRed</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+```
+* Step 2. Save and reboot
 
 ## What's working  
 Type | Status
