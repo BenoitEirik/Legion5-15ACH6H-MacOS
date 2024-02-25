@@ -66,7 +66,8 @@ Disbale Secure Boot from your BIOS if you want to install MacOS on an external U
 * Step 2. Download the "EFI" folder from this repo and place it in the root of your EFI partition
 * Step 3. Add the MacOS installer in `the com.apple.recovery.boot` folder following the instructions from [Dortania's guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/#making-the-installer).
 * Step 4. Before booting, be sure to have a formatted partition (as FAT32 next to the EFI partition for example) to install MacOS on it (the MacOS installer doesn't found the free space on my drive). You will format this partition after in APFS from the MacOS installer.
-* Step 4. Boot from your EFI partition, format your partition where you want MacOS installed, and proceed on installation.
+* Step 5. Boot from your EFI partition, format your partition where you want MacOS installed, and proceed on installation.
+NB: While MacOS installation, several reboots will occure. You have to manually start the EFI partition from your BIOS to be sure MacOS installer will be added on the OpenCore boot list. Reset NVRAM if it's not displayed after this.
 
 ## Postinstallation
 * Step 1. Edit your `EFi\OC\config.plist` file and add this entry at the comment `<!-- Add your NootedRed entry here -->`
