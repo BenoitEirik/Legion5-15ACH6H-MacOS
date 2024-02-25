@@ -33,14 +33,7 @@ Audio       | Realtek ALC 257 | ✅
 
 # Prerequisites
 
-* Disable 
-
 # BIOS Setup  
-
-## Disabling Secure Boot
-
-## Prepare a partition
-* Step 1. Format 
 
 ## Unlocking the advanced BIOS menu
 * Step 1. Format a USB as FAT32
@@ -64,6 +57,9 @@ With the patched BIOS loaded follow these steps to disable XHCI1:
 * Step 2. Go to the configuration menu
 * Step 3. Find iGPU VRAM size (Default is 512MB)
 * Step 4. Set to 1GB or above (recommended by NootedRed)
+
+## Disabling Secure Boot
+Disbale Secure Boot from your BIOS if you want to install MacOS on an external USB drive.
 
 ## Making the EFI partition with OpenCore
 * Step 1. Format a partition as FAT32 with a name like `EFI_MACOS` (you can use a USB drive but it will be needed to start MacOS each time you boot)
